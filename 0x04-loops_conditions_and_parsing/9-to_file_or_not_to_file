@@ -2,10 +2,9 @@
 # This bash script will give you information about the school file
 
 i="school"
-if [ ! -e "$i" ]
+if [ -e "$i" ]
 then
     echo "school file exists"
-    exit 0
     if [ -s "$i" ]
     then
 	echo "school file is not empty"
