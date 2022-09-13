@@ -2,8 +2,6 @@
 # This bash script will display Best School 10 times
 
 
-while [ $i -le 9 ]
-do
+until [ $((i++)) -gt 9 ]; do
     echo 'Best School'
-    ((i++))
 done
