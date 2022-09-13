@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+# This bash script will display the content of the current directory in long format
+
+for i in *
+do	 
+	 echo "$i" | cut -f 2 -d '-'
+done
