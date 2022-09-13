@@ -1,17 +1,8 @@
 #!/usr/bin/env bash
 # This bash script is displaying Best School 10 times
 
-var_a='Best School'
-for var_a in 'Best School'
+
+for (( i=0; i<10 ; i++ ))
 do
-    echo $var_a
-    echo $var_a
-    echo $var_a
-    echo $var_a
-    echo $var_a
-    echo $var_a
-    echo $var_a
-    echo $var_a
-    echo $var_a
-    echo $var_a
+    echo 'Best School'
 done
