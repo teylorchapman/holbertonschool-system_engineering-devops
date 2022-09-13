@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
 # This bash script is displaying Best School 10 times
 
+var_a='Best School'
 for var_a in 'Best School'
 do
     echo $var_a
