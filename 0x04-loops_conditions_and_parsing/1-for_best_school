@@ -1,5 +1,6 @@
-#!/bin/env bash
+#!/usr/bin/env bash
 # This bash script will display Best School 10 times
+
 for var_a in Best_School
 do
     echo $var_a
