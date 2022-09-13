@@ -9,7 +9,7 @@ then
     then
 	echo "school file is empty"
     else
-	echo "school files is not empty"
+	echo "school file is not empty"
     fi
     if [ -f "$i" ]
     then
