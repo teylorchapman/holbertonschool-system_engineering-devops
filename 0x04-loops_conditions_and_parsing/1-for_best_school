@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
-# This bash script will display Best School 10 times
+# This bash script is displaying Best School 10 times
 
-for var_a in Best_School
+for var_a in 'Best School'
 do
     echo $var_a
     echo $var_a
