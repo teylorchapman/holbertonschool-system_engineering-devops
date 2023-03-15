@@ -13,4 +13,4 @@ sed -i 's/listen\s*80;/listen 80 defualt_server;/g' /etc/nginx/sites-available/d
 sed -i 's|#*root /var/www/html;|root /var/www/html;|g' /etc/nginx/sites-available/default
 sed -i 's|#*index index.html;|index index.html;|g' /etc/nginx/sites-available/default
 
-sudp service nginx restart
+sudo service nginx restart
