@@ -1,7 +1,11 @@
 #!/usr/bin/env bash
 # transfers a file from our client to a server
 
+<<<<<<< HEAD
 if (($# < 4))
+=======
+if [ $# <= 3 ]
+>>>>>>> fedffbb12da289c756a273eebccc3895bc23673a
 then
     echo 'Usage: 0-transfer_file PATH_TO_FILE IP USERNAME PATH_TO_SSH_KEY'
 else
