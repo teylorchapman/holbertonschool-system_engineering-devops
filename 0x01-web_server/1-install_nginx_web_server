@@ -5,12 +5,13 @@ sudo apt-get -y update
 sudo apt-get -y upgrade
 sudo apt-get -y install nginx
 
-mkdir -p /etc/nginx/html
+mkdir /etc/nginx/html
 touch /etc/nginx/html/index.html
 echo "Hello World!" > /etc/nginx/html/index.html
-
-sed -i 's/listen\s*80;/listen 80 defualt_server;/g' /etc/nginx/sites-available/default
-sed -i 's|#*root /var/www/html;|root /var/www/html;|g' /etc/nginx/sites-available/default
-sed -i 's|#*index index.html;|index index.html;|g' /etc/nginx/sites-available/default
-
+printf %s "server {
+    listen  80 default_server;
+    listen  [::]:80 default_server;
+    root    /etc/nginx/html;
+    index   index.html;
+}" > /etc/nginx/sites-available/default
 sudo service nginx restart
