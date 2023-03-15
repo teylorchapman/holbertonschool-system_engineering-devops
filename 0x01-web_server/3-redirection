@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 # installing nginx on my remote server
 
-apt-get update -y
+apt-get update
 apt-get upgrade -y
 apt-get install -y nginx
 mkdir /etc/nginx/html -p
@@ -14,5 +14,6 @@ printf %s "server {
     index   index.html;
     location /redirect_me {
         return 301 http://tatertotsaremylife.tech/;
+    }
 }" > /etc/nginx/sites-available/default
 service nginx restart
