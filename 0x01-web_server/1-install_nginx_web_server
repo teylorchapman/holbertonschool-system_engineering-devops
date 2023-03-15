@@ -1,9 +1,9 @@
 #!/usr/bin/env bash
 # installing nginx on my remote server
 
-sudo apt-get -y update
-sudo apt-get -y upgrade
-sudo apt-get -y install nginx
+apt-get -y update
+apt-get -y upgrade
+apt-get -y install nginx
 mkdir -p /etc/nginx/html
 touch /etc/nginx/html/index.html
 echo "Hello World!" > /etc/nginx/html/index.html
@@ -15,4 +15,4 @@ printf %s "server {
         index index.html;
     }
 }" > /etc/nginx/sites-available/default
-sudo service nginx restart
+service nginx restart
