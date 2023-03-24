@@ -2,7 +2,7 @@
 # updating the SSH config so a password is unneeded
 
 Host 5535-web-01
-    Hostname 15.236.186.71
+    Hostname 15.236.208.107
     User ubuntu
     IdentityFile ~/.ssh/school
-    PassworkAuthentification no
+    PasswordAuthentification no
