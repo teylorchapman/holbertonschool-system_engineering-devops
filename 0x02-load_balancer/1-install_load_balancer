@@ -13,7 +13,7 @@ frontend http-in
     default_backend servers
 backend servers
     balance roundrobin
-    server  5580-web-01 52.47.77.6:80 check
-    server  5580-web-02 15.237.132.139:80 check
+    server  5535-web-01 15.236.208.107:80 check
+    server  5535-web-02 15.237.83.116:80 check
 EOT
 sudo service haproxy restart
