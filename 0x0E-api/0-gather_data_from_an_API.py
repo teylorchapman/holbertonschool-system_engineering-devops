@@ -6,26 +6,26 @@ from sys import argv, exit
 
 
 def get_employee_todo_progress(employee_id):
-    """doc"""
-    base_url = "https://jsonplaceholder.typicode.com"
+    """gets employee progress via their employee ID"""
+    baseurl = "https://jsonplaceholder.typicode.com"
 
-    user_response = requests.get("{}/users/{}"
-                                 .format(base_url, employee_id))
-    user_data = user_response.json()
+    user_resp = requests.get("{}/users/{}"
+                                 .format(baseurl, employee_id))
+    userdata = user_resp.json()
 
-    if 'name' not in user_data:
+    if 'name' not in userdata:
         print("Invalid employee ID")
         return
 
     todo_resp = requests.get("{}/users/{}/todos"
-                             .format(base_url, employee_id))
+                             .format(baseurl, employee_id))
     tododata = todo_resp.json()
 
     completedtasks = [task for task in tododata if task["completed"]]
     totaltasks = len(tododata)
 
     print("Employee {} is done with tasks({}/{}): "
-          .format(user_data['name'], len(completedtasks), totaltasks))
+          .format(userdata['name'], len(completedtasks), totaltasks))
 
     for task in completedtasks:
         print("\t", task["title"])
