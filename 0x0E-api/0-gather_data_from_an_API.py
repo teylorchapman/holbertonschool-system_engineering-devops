@@ -18,7 +18,7 @@ def get_employee_todo_progress(employee_id):
         return
 
     todo_resp = requests.get("{}/users/{}/todos"
-                                  .format(base_url, employee_id))
+                             .format(base_url, employee_id))
     tododata = todo_resp.json()
 
     completedtasks = [task for task in tododata if task["completed"]]
