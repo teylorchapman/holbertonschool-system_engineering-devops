@@ -11,7 +11,7 @@ def get_employee_data(employee_id):
     baseurl = "https://jsonplaceholder.typicode.com"
 
     user_resp = requests.get("{}/users/{}"
-                                 .format(baseurl, employee_id))
+                             .format(baseurl, employee_id))
     userdata = user_resp.json()
 
     if 'name' not in userdata:
@@ -52,6 +52,6 @@ if __name__ == '__main__':
         exit(1)
 
     userdata, tododata = get_employee_data(employee_id)
-    
+
     if userdata and tododata:
         export_to_csv(employee_id, userdata, tododata)
