@@ -1,0 +1,19 @@
+#!/usr/bin/env bash
+# iNsTaLl ThE lOaD bAlAnCeR
+
+sudo apt-get -y update
+sudo apt-get -y upgrade
+sudo apt-get -y install haproxy
+echo "ENABLED=1" | sudo tee -a /etc/default/haproxy
+cat <<EOT > /etc/haproxy/haproxy.cfg
+defaults
+    mode    http
+frontend http-in
+    bind    *:80
+    default_backend servers
+backend servers
+    balance roundrobin
+    server  5535-web-01 15.236.208.107:80 check
+    server  5535-web-02 15.237.83.116:80 check
+EOT
+sudo service haproxy restart
